@@ -68,6 +68,7 @@ export const NavMenu = styled.ul`
 `
 
 export const NavItem = styled.li`
+    margin-top: 15px;
     height: 80px;
 `
 

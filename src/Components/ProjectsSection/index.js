@@ -1,68 +1,175 @@
-import React from 'react'
-import Icon1 from '../../images/project2/logo-c.JPG'
-import Icon2 from '../../images/componentsProject/logo-b.JPG'
-import Icon3 from '../../images//patternsProject/logo-a.png'
-import Image1_1 from '../../images/project2/c-1.JPG' 
-import Image1_2 from '../../images/project2/c-2.JPG'
-import Image1_3 from '../../images/project2/c-3.JPG'
-import Image1_4 from '../../images/project2/c-4.JPG'
-import Image2_1 from '../../images/componentsProject/c-1.JPG' 
-import Image2_2 from '../../images/componentsProject/c-2.JPG'
-import Image2_3 from '../../images/componentsProject/c-3.JPG' 
-import Image2_4 from '../../images/componentsProject/c-4.JPG'
-import Image3_1 from '../../images/patternsProject/a-1.png' 
-import Image3_2 from '../../images/patternsProject/a-2.png' 
-import Image3_3 from '../../images/patternsProject/a-3.png' 
-import Image3_4 from '../../images/patternsProject/a-4.png' 
-import ProjectCard from './ProjectCard'
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import Typography from '@material-ui/core/Typography';
+import BasicModal from './BasicModal'
+import Divider from "@material-ui/core/Divider";
+import ModalContent from './ModalContent'
+import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import {images} from './Data'
 
 import {
     ProjectsContainer, 
     ProjectsH1, 
-    ProjectsWrapper, 
+    ProjectsH2,
 } from './ProjectsSectionElements'
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      minWidth: 300,
+      width: '90%',
+    },
+    image: {
+      position: 'relative',
+      height: 350,
+      [theme.breakpoints.down('xs')]: {
+        width: '100% !important', // Overrides inline-style
+        height: 100,
+      },
+      '&:hover, &$focusVisible': {
+        zIndex: 1,
+        '& $imageBackdrop': {
+          opacity: 0.15,
+        },
+        '& $imageMarked': {
+          opacity: 0,
+        },
+        '& $imageTitle': {
+          border: '4px solid currentColor',
+        },
+      },
+    },
+    focusVisible: {},
+    imageButton: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: theme.palette.common.white,
+    },
+    imageSrc: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center 40%',
+    },
+    imageBackdrop: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      backgroundColor: theme.palette.common.black,
+      opacity: 0.30,
+      transition: theme.transitions.create('opacity'),
+    },
+    imageTitle: {
+      position: 'relative',
+      padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+      fontFamily: 'Montserrat',
+      fontWeight: 500,
+      fontSize: 19,
+    },
+    imageMarked: {
+      height: 3,
+      width: 18,
+      backgroundColor: theme.palette.common.white,
+      position: 'absolute',
+      bottom: -2,
+      left: 'calc(50% - 9px)',
+      transition: theme.transitions.create('opacity'),
+    },
+  }));
+
 const ProjectsSection = () => {
+    const classes = useStyles();
+    const [showModal, setShowModal] = useState(false);
+    const [values, setValues] = useState(null);
+
+    const showProjectModal = (e,image) => {
+      setValues({
+        id: image.id,
+        project: image.project,
+        description: image.description,
+        tags : image.tags,
+        photos: image.photos,
+     })
+     console.log(values?.description);
+      setShowModal(true);
+    };
+
+      const Cards = () => {
+        return (
+          <ProjectsContainer id="projects">   
+          <ProjectsH1>Projects</ProjectsH1> 
+          <ProjectsH2>Take a look at my projects</ProjectsH2> 
+              <div className={classes.root}>
+                  {images.map((image) => (
+                  <ButtonBase
+                      focusRipple
+                      key={image.title}
+                      className={classes.image}
+                      onClick={(e) => showProjectModal(e,image)}
+                      focusVisibleClassName={classes.focusVisible}
+                      style={{
+                      width: image.width,
+                      }}
+                  >
+                      <span
+                      className={classes.imageSrc}
+                      style={{
+                          backgroundImage: `url(${image.url})`,
+                      }}
+                      />
+                      <span className={classes.imageBackdrop} />
+                      <span className={classes.imageButton}>
+                      <Typography
+                          component="span"
+                          variant="subtitle1"
+                          color="inherit"
+                          className={classes.imageTitle}
+                      >
+                          {image.title}
+                          <span className={classes.imageMarked} />
+                      </Typography>
+                      </span>
+                  </ButtonBase>
+                  ))}
+              </div>
+              </ProjectsContainer>
+        );
+      };
 
     return (
-        <ProjectsContainer id="projects">
-           <ProjectsH1>Projects</ProjectsH1> 
-           <ProjectsWrapper>
-               <ProjectCard 
-               src={Icon1} 
-               alt="Fondo"
-               title=".NET | Jquery"
-               subtitle="Full .NET web application: food delivery"
-               description="Final project of the Project 2 course at Cenfotec University. Application for the sale and delivery of food."
-               image1={Image1_1}
-               image2={Image1_2}
-               image3={Image1_3}
-               image4={Image1_4}
-               />
-                <ProjectCard 
-               src={Icon2} 
-               alt="Fondo"
-               title="Flask | C# | Vue JS"
-               subtitle="Flask web application: food orders"
-               description="Final project of the course “Componentes” (Components) in Universidad Cenfotec The languages and technologies were used: Flask web framework, C #, docker, Cosmos database, Azure pipelines and Vue JS."
-               image1={Image2_1}
-               image2={Image2_2}
-               image3={Image2_3}
-               image4={Image2_4}
-               />
-               <ProjectCard 
-               src={Icon3} 
-               alt="Fondo"
-               title="Spring boot | Boostrap"
-               subtitle="Spring boot web application: human resources management"
-               description="Final project of the course “Programación con Patrones” (Programming with Patterns) in Universidad Cenfotec. It was an application for the management of human resources of a company."
-               image1={Image3_1}
-               image2={Image3_2}
-               image3={Image3_3}
-               image4={Image3_4}
-               />
-           </ProjectsWrapper>
-        </ProjectsContainer>
+            <div>
+             {showModal && values && (
+                <BasicModal
+                  open={showModal}
+                  onClose={() => setShowModal(false)}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description"
+                >
+                  <Typography variant="h6" gutterBottom>
+                        {values.project}
+                  </Typography>
+                  <Divider light={true} style={{ marginBottom: 15 }} />
+                  <ModalContent values={values}/>
+                </BasicModal>
+            )}
+            <Cards />
+          </div>
     )
 }
 

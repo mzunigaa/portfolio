@@ -12,7 +12,7 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
     display: grid;
     z-index: 1;
-    height: 760px;
+    height: 600px;
     width: 100%;
     max-width: 1100px;
     margin-right: auto;
@@ -69,12 +69,12 @@ export const TopLine = styled.p`
     margin-bottom: 16px;
 `;
 
-export const Heading = styled.h1`
+export const Heading = styled.p`
     color: #000;
     margin-bottom: 24px;
     font-size: 48px;
-    line-height: 1.1;
-    font-weight: 600;
+    line-height: 1;
+    font-weight: 300;
 
     color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#313131')}; 
 
@@ -100,8 +100,47 @@ export const ImgWrap = styled.div`
     }
 `;
 export const Img = styled.img`
-    width: 100%;
-    margin: 0 0 20px 0;
-    padding-right: 0px;
-    margin-top: 50px;
+    width: 120px;
+    margin: 0 0 0 100px;
+    align: center;
 `;
+
+export const FormContainer = styled.div`
+    width: 360px;
+    background-color: white;
+    margin: auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 10px;
+    border-radius: 10px;
+`;
+  
+export const RegisterForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+  `;
+  
+  export const SuccessMessage = styled.p`
+    font-family: "Montserrat", sans-serif;
+    background-color: #3f89f8;
+    padding: 15px;
+    color: white;
+`;
+  
+export const FormField = styled.input` 
+    margin: 10px 0 10px 0;
+    padding: 15px;
+    font-size: 16px;
+    border: 0;
+    font-family: "Montserrat", sans-serif;
+    background: #f2f2f2;
+  `;
+  
+  export const BtnWrap = styled.button` 
+    color: white;
+    cursor: pointer;
+    border: none;
+    background: white;
+  `;
+  

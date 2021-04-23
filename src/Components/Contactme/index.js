@@ -1,6 +1,9 @@
 import React from 'react';
 import { BsFillEnvelopeFill } from "react-icons/bs";
-import { FaTelegram, FaPhone } from "react-icons/fa";
+import { FaTelegram, FaPhone} from "react-icons/fa";
+import FormContactMe from './FormContactMe'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faWhatsapp} from "@fortawesome/free-brands-svg-icons"
 
 import { 
     InfoContainer, 
@@ -12,8 +15,6 @@ import {
     TopLine, 
     Heading, 
     Subtitle, 
-    ImgWrap, 
-    Img 
 } from './ContactMeElements';
 
 const ContactMeSection = ({
@@ -27,12 +28,6 @@ const ContactMeSection = ({
     description,
     description2,
     description3, 
-    buttonLabel, 
-    img, 
-    alt,
-    primary, 
-    dark,
-    dark2
 }) => {
     return (
         <>
@@ -46,12 +41,13 @@ const ContactMeSection = ({
                                 <Subtitle darkText={darkText}><BsFillEnvelopeFill />{description}</Subtitle>
                                 <Subtitle darkText={darkText}><FaPhone />{description2}</Subtitle>
                                 <Subtitle darkText={darkText}><FaTelegram />{description3}</Subtitle>
+                                <a href="https://walink.co/87cfd3" class="whatsapp" target="blank">
+                                     <FontAwesomeIcon icon={faWhatsapp} />
+                                </a>
                             </TextWrapper>
                         </Column1>
                         <Column2>
-                            <ImgWrap>
-                                <Img src={img} alt={alt}/>
-                            </ImgWrap>
+                            <FormContactMe/>
                         </Column2>
                     </InfoRow>
                 </InfoWrapper>

@@ -71,10 +71,11 @@ export const HeroContent = styled.div`
     align-items: center;
 `
 
-export const HeroH1 = styled.h1`
+export const HeroH1 = styled.p`
     color: #fff;
     font-size: 48px;
     text-align: center;
+    margin: 0;
 
     @media screen and (max-width: 768px){
         font-size: 40px;
@@ -85,7 +86,7 @@ export const HeroH1 = styled.h1`
     }
 `
 export const HeroP = styled.p`
-    margin-top: 24px;
+    margin-top: 0px;
     color: #fff;
     font-size: 24px;
     text-align: center;
@@ -102,7 +103,7 @@ export const HeroP = styled.p`
 `
 
 export const HeroBtnWrapper = styled.div`
-    margin-top: 32px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -12,7 +12,7 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
     display: grid;
     z-index: 1;
-    height: 860px;
+    height: 700px;
     width: 100%;
     max-width: 1100px;
     margin-right: auto;
@@ -37,7 +37,7 @@ export const InfoRow = styled.div`
 `;
 
 export const Column1 = styled.div`
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 0 15px;
     grid-area: col1;
 `;
@@ -64,12 +64,12 @@ export const TopLine = styled.p`
     margin-bottom: 16px;
 `;
 
-export const Heading = styled.h1`
+export const Heading = styled.p`
     color: #000;
     margin-bottom: 24px;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 1.1;
-    font-weight: 600;
+    font-weight: 200;
 
     color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#313131')}; 
 
@@ -100,4 +100,5 @@ export const Img = styled.img`
     width: 100%;
     margin: 0 0 20px 0;
     padding-right: 0px;
+    border-radius: 10px;
 `;

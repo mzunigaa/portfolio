@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../ButtonElement';
+import { ButtonDownload } from '../ButtonDownload';
 import MZCV from '../../docs/MZCV.pdf'
 import { 
     InfoContainer, 
@@ -33,6 +33,7 @@ const AboutMeSection = ({
     dark,
     dark2
 }) => {
+
     return (
         <>
             <InfoContainer lightBg={lightBg} id={id}>
@@ -45,7 +46,7 @@ const AboutMeSection = ({
                                 <Subtitle darkText={darkText}>{description}</Subtitle>
                                 <Subtitle darkText={darkText}>{description2}</Subtitle>
                                 <BtnWrap>
-                                    <Button to= {MZCV}
+                                    <ButtonDownload href= {MZCV}
                                     download="MonicaZunigaCV.pdf"
                                     target='_blank'
                                     smooth={true}
@@ -56,7 +57,7 @@ const AboutMeSection = ({
                                     primary={primary ? 1 : 0}
                                     dark={dark ? 1 : 0}
                                     dark2={dark2 ? 1 : 0}
-                                    >{buttonLabel}</Button>
+                                    >{buttonLabel}</ButtonDownload>
                                 </BtnWrap>
                             </TextWrapper>
                         </Column1>

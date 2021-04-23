@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const ProjectsContainer = styled.div`
-    height: 800px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #0098A6;
+    background: linear-gradient(90deg, rgba(0,152,166,1) 0%, rgba(48,180,193,1) 52%, rgba(127,199,205,1) 100%);
 
     @media screen and (max-width: 768px){
         height: 1400px;
@@ -18,13 +18,13 @@ export const ProjectsContainer = styled.div`
 `
 
 export const ProjectsWrapper = styled.div`
-    max-width: 1000px;
+    max-width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
-    grid-gap: 16px;
-    padding: 0 50px;
+    grid-gap: 10px;
+    padding: 0;
 
     @media screen and (max-width: 1000px){
         grid-template-columns: 1fr 1fr;
@@ -38,32 +38,34 @@ export const ProjectsWrapper = styled.div`
 
 
 export const ProjectsCardContainer = styled.div`
-    background: #f9f9f9;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     max-height: 340px;
-    height: 280px;
+    height: 340px;
     width: 280px;
     border-radius: 10px;
     margin: 10px;
     box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+    border: solid;
 
     transition: all 0.2s ease-in-out;
 
 `
 
 export const ProjectsIcon = styled.img`
-    height: 200px;
+    height: 100%;
     width: 100%;
     border-radius: 10px;
+    opacity: 0.9;
+    border: solid;
 `
 
-export const ProjectsH1 = styled.h1`
-    font-size: 48px;
+export const ProjectsH1 = styled.p`
+    font-size: 40px;
     color: #fff;
-    margin-bottom: 64px;
+    margin-bottom: 10px;
 
     @media screen and (max-width: 480px){
         font-size: 2rem;
@@ -71,11 +73,14 @@ export const ProjectsH1 = styled.h1`
 `
 
 
-export const ProjectsH2 = styled.h1`
-    font-size: 1rem;
-    color: #000;    
-    margin-bottom: 10px;
-    margin-top: 10px;
+export const ProjectsH2 = styled.p`
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 480px){
+        font-size: 2rem;
+    }
 `
 
 export const ProjectsP = styled.p`
@@ -171,5 +176,28 @@ export const ModalDescription = styled.p`
     text-align: center;
 `
 
+export const CarouselContainer = styled.div`
+    width: 900px;
+    height: 90%;
+`
 
+export const contentStyle = styled.h3`
+    height: '160px';
+    color: '#fff';
+    lineHeight: '160px';
+    textAlign: 'center';
+    background: '#364d79';
+`
+
+export const TextContainer = styled.div`
+    background: red;
+    border: solid;
+    margin-bottom: 20px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.90);
+    align-items: center;
+    width: fix;
+    border: solid;
+    border-radius: 10px;
+`
 
