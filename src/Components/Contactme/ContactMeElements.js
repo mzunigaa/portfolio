@@ -143,4 +143,11 @@ export const FormField = styled.input`
     border: none;
     background: white;
   `;
+
+  export const WAImg = styled.img`
+    width: 100px;
+    margin: 0 0 0 0;
+    align: center;
+`;
+
   

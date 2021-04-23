@@ -9,11 +9,11 @@ export const ProjectsContainer = styled.div`
     background: linear-gradient(90deg, rgba(0,152,166,1) 0%, rgba(48,180,193,1) 52%, rgba(127,199,205,1) 100%);
 
     @media screen and (max-width: 768px){
-        height: 1400px;
+        height: 700px;
     }
 
     @media screen and (max-width: 480px){
-        height: 2000px;
+        height: 1000px;
     }
 `
 

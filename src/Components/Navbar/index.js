@@ -11,8 +11,10 @@ import {
     NavItem, 
     NavLinks,
     NavBtn,
-    NavBtnLink
+    NavBtnLink,
+    Img
  } from './NavbarElements';
+import logo from '../../images/logomoni.png'
  
 
 const Navbar = ({ toggle }) => {
@@ -39,7 +41,10 @@ const Navbar = ({ toggle }) => {
         <IconContext.Provider value = {{ color: '#fff'}}>
           <Nav scrollNav={scrollNav}>
               <NavbarContainer>
-                  <NavLogo to="/" onClick={toggleHome}>Mónica Zúñiga</NavLogo>
+                  <NavLogo to="/" onClick={toggleHome}>
+                    <Img src={logo} alt="Logo"/>
+                  </NavLogo>
+                  {/* <NavLogo to="/" onClick={toggleHome}>Mónica Zúñiga</NavLogo> */}
                   <MobileIcon onClick={toggle}>
                       <FaBars />
                   </MobileIcon>

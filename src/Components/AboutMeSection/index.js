@@ -1,5 +1,4 @@
 import React from 'react';
-import { ButtonDownload } from '../ButtonDownload';
 import MZCV from '../../docs/MZCV.pdf'
 import { 
     InfoContainer, 
@@ -13,7 +12,8 @@ import {
     Subtitle, 
     BtnWrap, 
     ImgWrap, 
-    Img 
+    Img,
+    ButtonDownload
 } from './AboutMeElements';
 
 const AboutMeSection = ({
@@ -34,6 +34,14 @@ const AboutMeSection = ({
     dark2
 }) => {
 
+    const downloadFile = () => {
+        return {
+            mime: MZCV,
+            filename: 'myexportedfile.txt',
+            contents: 'all of the exports',
+           }
+      }
+
     return (
         <>
             <InfoContainer lightBg={lightBg} id={id}>
@@ -46,18 +54,12 @@ const AboutMeSection = ({
                                 <Subtitle darkText={darkText}>{description}</Subtitle>
                                 <Subtitle darkText={darkText}>{description2}</Subtitle>
                                 <BtnWrap>
-                                    <ButtonDownload href= {MZCV}
-                                    download="MonicaZunigaCV.pdf"
-                                    target='_blank'
-                                    smooth={true}
-                                    duration={500}
-                                    spy={true}
-                                    exact="true"
-                                    offset={-80}
-                                    primary={primary ? 1 : 0}
-                                    dark={dark ? 1 : 0}
-                                    dark2={dark2 ? 1 : 0}
-                                    >{buttonLabel}</ButtonDownload>
+                                <a href={MZCV} download="CV_Monica_Zuniga">
+                                    <ButtonDownload href={MZCV} onClick={downloadFile}>
+                                        Download resume
+                                    </ButtonDownload>
+                                </a>
+                                   
                                 </BtnWrap>
                             </TextWrapper>
                         </Column1>
