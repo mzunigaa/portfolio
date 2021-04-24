@@ -80,10 +80,13 @@ export const NavLinks = styled(LinkS)`
     padding: 0 1rem;
     height: 100%;
     cursor: pointer;
+    &:hover {
+        color: #FFAB40;
+    }
 
-&.active {
-    border-bottom: 3px solid #ffab40;
-}
+    &.active {
+        border-bottom: 3px solid #ffab40;
+    }
 `
 export const NavBtn = styled.nav`
     display: flex;

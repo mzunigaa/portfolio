@@ -6,7 +6,7 @@ export const ProjectsContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, rgba(0,152,166,1) 0%, rgba(48,180,193,1) 52%, rgba(127,199,205,1) 100%);
+    background: #0098A6;
 
     @media screen and (max-width: 768px){
         padding-top:50px;

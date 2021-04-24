@@ -133,7 +133,7 @@ export const FormField = styled.input`
     font-size: 16px;
     border: 0;
     font-family: "Montserrat", sans-serif;
-    background: #f2f2f2;
+    background: #E9E9E9;
     color: black;
     &:focus {
         outline: none;
@@ -149,7 +149,7 @@ export const FormField = styled.input`
     font-size: 16px;
     border: 0;
     font-family: "Montserrat", sans-serif;
-    background: #f2f2f2;
+    background: #E9E9E9;
     textAlignVertical: top;
     color: black;
     &:focus {
