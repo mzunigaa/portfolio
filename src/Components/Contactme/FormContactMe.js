@@ -3,17 +3,25 @@ import {
     FormContainer,
     RegisterForm,
     FormField,
+    FormCommentField,
     BtnWrap,
-    Img
+    TittleForm,
+    SubmittButton,
+    SuccessMessage,
+    NameAlert
 } from './ContactMeElements';
-import logo from '../../images/logo.jpg'
+import emailjs from 'emailjs-com';
 
 
 const FormContactMe = () => {
+
+    const[submitted, setSubmitted] = useState(false);
+    const [valid, setValid] = useState(false); 
+
     const [values, setValues] = useState({
-        firstName: "",
-        lastName: "",
+        name: "",
         email: "",
+        comment: "",
     })
 
     const handleNameInputChange = (event) => {
@@ -25,13 +33,30 @@ const FormContactMe = () => {
     }
 
     const handleCommentInputChange = (event) => {
-        setValues({...values, email: event.target.value})
+        setValues({...values, comment: event.target.value})
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if(values.name && values.email && values.comment){
+            setValid(true);
+            emailjs.sendForm('service_b033jb7', 'template_uk3sbhs', event.target, 'user_n7kTNJTwHt584EhjZXFJA')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        }
+        setSubmitted(true);
     }
 
     return (
         <FormContainer>
-            <Img src={logo} alt="Logo"/>
-            <RegisterForm>
+            <BtnWrap>
+                <TittleForm darkText={true}>Let's talk!</TittleForm>
+            </BtnWrap>
+            {submitted && valid ? <SuccessMessage>Success! Thank you.</SuccessMessage>: null}
+            <RegisterForm onSubmit={handleSubmit}>
                 <FormField
                  onChange={handleNameInputChange}
                  id="name"
@@ -39,6 +64,7 @@ const FormContactMe = () => {
                  placeholder="Nombre completo"
                  name="name">
                 </FormField>
+                {submitted && !values.name ? <NameAlert>Please enter a name.</NameAlert> : null}
                 <FormField
                  onChange={handleEmailInputChange}
                  id="email"
@@ -46,15 +72,19 @@ const FormContactMe = () => {
                  placeholder="Correo electronico"
                  name="email">
                 </FormField>
-                <FormField
+                {submitted && !values.email ? <NameAlert>Please enter an email.</NameAlert> : null}
+                <FormCommentField
                  onChange={handleCommentInputChange}
                  id="comment"
                  type="text"
                  placeholder="Comentario"
                  name="comment">
-                </FormField>
+                </FormCommentField>
+                {submitted && !values.comment ? <NameAlert>Please enter a comment.</NameAlert> : null}
                 <BtnWrap>
-                   
+                    <SubmittButton>
+                      Submitt
+                    </SubmittButton>
                 </BtnWrap>
             </RegisterForm>
         </FormContainer>

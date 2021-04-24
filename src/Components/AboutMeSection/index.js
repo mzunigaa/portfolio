@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { useEffect } from 'react';
 import MZCV from '../../docs/MZCV.pdf'
 import { 
     InfoContainer, 
@@ -15,6 +15,8 @@ import {
     Img,
     ButtonDownload
 } from './AboutMeElements';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const AboutMeSection = ({
     lightBg, 
@@ -33,6 +35,12 @@ const AboutMeSection = ({
     dark,
     dark2
 }) => {
+
+    useEffect(() => {
+        AOS.init({
+          // duration : 5000
+        });
+      }, []);
 
     const downloadFile = () => {
         return {
@@ -65,7 +73,9 @@ const AboutMeSection = ({
                         </Column1>
                         <Column2>
                             <ImgWrap>
+                            <div data-aos="fade-up" data-aos-duration="3000">
                                 <Img src={img} alt={alt}/>
+                            </div>
                             </ImgWrap>
                         </Column2>
                     </InfoRow>

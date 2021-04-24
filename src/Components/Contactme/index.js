@@ -42,7 +42,7 @@ const ContactMeSection = ({
                                 <Subtitle darkText={darkText}><BsFillEnvelopeFill />{description}</Subtitle>
                                 <Subtitle darkText={darkText}><FaPhone />{description2}</Subtitle>
                                 <Subtitle darkText={darkText}><FaTelegram />{description3}</Subtitle>
-                                <a href="https://walink.co/87cfd3" class="whatsapp" target="blank">
+                                <a href="https://walink.co/87cfd3" className="whatsapp" target="blank">
                                      <WAImg src={WA} alt="Logo" />
                                 </a>
                             </TextWrapper>

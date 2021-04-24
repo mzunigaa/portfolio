@@ -9,6 +9,7 @@ export const ProjectsContainer = styled.div`
     background: linear-gradient(90deg, rgba(0,152,166,1) 0%, rgba(48,180,193,1) 52%, rgba(127,199,205,1) 100%);
 
     @media screen and (max-width: 768px){
+        padding-top:50px;
         height: 700px;
     }
 
@@ -32,7 +33,6 @@ export const ProjectsWrapper = styled.div`
 
     @media screen and (max-width: 768px){
         grid-template-columns: 1fr;
-        padding: 0 20px;
     }
 `
 

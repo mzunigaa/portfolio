@@ -5,7 +5,8 @@ export const InfoContainer = styled.div`
     background: ${({ lightBg }) => (lightBg ? '#f9f9f9' : '#0098A6')};
 
     @media screen and (max-width: 768px){
-        padding: 100px 0;
+        padding: 90px 0;
+        height: 1000px;
     }
 `;
 
@@ -55,7 +56,8 @@ export const TextWrapper = styled.div`
 
     @media screen and (max-width: 768px){
         padding: 0px;
-        margin-top: 100px;
+        margin-top: 0px;
+        margin-left: 0px;
     }
 `;
 
@@ -72,9 +74,9 @@ export const TopLine = styled.p`
 export const Heading = styled.p`
     color: #000;
     margin-bottom: 24px;
-    font-size: 48px;
-    line-height: 1;
-    font-weight: 300;
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 200;
 
     color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#313131')}; 
 
@@ -85,10 +87,10 @@ export const Heading = styled.p`
 
 export const Subtitle = styled.p`
     max-width: 440 px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     font-size: 18px;
     line-height: 24px;
-    color: ${({ darkText }) => (darkText ? '#010606' : '#313131')}; 
+    color: #f7f8fa; 
 `;
 
 export const ImgWrap = styled.div`
@@ -112,6 +114,10 @@ export const FormContainer = styled.div`
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     padding: 10px;
     border-radius: 10px;
+
+    @media screen and (max-width: 768px){
+        margin-left: 15px;
+    }
 `;
   
 export const RegisterForm = styled.form`
@@ -121,13 +127,6 @@ export const RegisterForm = styled.form`
     padding: 10px;
   `;
   
-  export const SuccessMessage = styled.p`
-    font-family: "Montserrat", sans-serif;
-    background-color: #3f89f8;
-    padding: 15px;
-    color: white;
-`;
-  
 export const FormField = styled.input` 
     margin: 10px 0 10px 0;
     padding: 15px;
@@ -135,13 +134,35 @@ export const FormField = styled.input`
     border: 0;
     font-family: "Montserrat", sans-serif;
     background: #f2f2f2;
+    color: black;
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 3px gray;
+    }
+  `;
+
+  export const FormCommentField = styled.input` 
+    margin: 10px 0 20px 0;
+    width: 100%;
+    height: 150px;
+    padding: 0px 0px 100px 15px;
+    font-size: 16px;
+    border: 0;
+    font-family: "Montserrat", sans-serif;
+    background: #f2f2f2;
+    textAlignVertical: top;
+    color: black;
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 3px gray;
+    }
   `;
   
-  export const BtnWrap = styled.button` 
-    color: white;
-    cursor: pointer;
-    border: none;
-    background: white;
+  export const BtnWrap = styled.div` 
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 0px;
   `;
 
   export const WAImg = styled.img`
@@ -150,4 +171,42 @@ export const FormField = styled.input`
     align: center;
 `;
 
-  
+export const SubmittButton = styled.button`
+    border-radius: 50px;
+    background: #313131;
+    white-space: nowrap;
+    padding: 12px 30px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #ffab40;
+    }
+`;
+
+export const TittleForm = styled.p`
+    font-size: 20px;
+    line-height: 24px;
+    color: #010606; 
+    padding-top: 10px;
+`;
+
+export const SuccessMessage = styled.div`
+    font-family: "Montserrat", sans-serif;
+    padding-left: 15px;
+    color: green;
+    display: inline-block;
+`;
+
+export const NameAlert = styled.span`
+    color:red;  
+    padding-left: 2px;
+    font-family: "Montserrat", sans-serif;
+`;

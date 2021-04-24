@@ -10,6 +10,7 @@ export const SkillsContainer = styled.div`
 
     @media screen and (max-width: 768px){
         height: 1400px;
+        padding-top: 120px;
     }
 
     @media screen and (max-width: 480px){
