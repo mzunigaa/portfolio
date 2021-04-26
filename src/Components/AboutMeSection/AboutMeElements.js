@@ -102,6 +102,7 @@ export const Img = styled.img`
     margin: 0 0 20px 0;
     padding-right: 0px;
     border-radius: 10px;
+    box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.15);
 `;
 
 export const ButtonDownload = styled.button`

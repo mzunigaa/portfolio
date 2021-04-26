@@ -36,11 +36,11 @@ const FormContactMe = () => {
         setValues({...values, comment: event.target.value})
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
         if(values.name && values.email && values.comment){
             setValid(true);
-            emailjs.sendForm('service_b033jb7', 'template_uk3sbhs', event.target, 'user_n7kTNJTwHt584EhjZXFJA')
+            emailjs.sendForm('service_b033jb7', 'template_uk3sbhs', e.target, 'user_n7kTNJTwHt584EhjZXFJA')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {

@@ -1,7 +1,7 @@
 {
   "name": "monica-portfolio",
   "version": "0.1.0",
-  "homepage": "www.monicazuniga.com",
+  "homepage": "http://monicazuniga.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

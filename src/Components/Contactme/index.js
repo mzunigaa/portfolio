@@ -3,7 +3,6 @@ import { BsFillEnvelopeFill } from "react-icons/bs";
 import { FaTelegram, FaPhone} from "react-icons/fa";
 import FormContactMe from './FormContactMe'
 import WA from '../../images/WA.png'
-import "./styles.css"
 
 import { 
     InfoContainer, 

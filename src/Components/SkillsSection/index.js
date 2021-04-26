@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import Icon1 from '../../images/skills/react.png'
 import Icon2 from '../../images/skills/javalogo.png'
-import Icon3 from '../../images/skills/node.png'
 import Icon4 from '../../images/skills/python.png'
 import Icon5 from '../../images/skills/pBI.webp'
 

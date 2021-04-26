@@ -5,10 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import BasicModal from './BasicModal'
 import Divider from "@material-ui/core/Divider";
 import ModalContent from './ModalContent'
-import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import {images} from './Data'
 
 import {
@@ -106,7 +102,6 @@ const ProjectsSection = () => {
         tags : image.tags,
         photos: image.photos,
      })
-     console.log(values?.description);
       setShowModal(true);
     };
 
